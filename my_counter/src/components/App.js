@@ -1,22 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
-import actions from '../actions/counterActions'
+import counterActions from '../actions/counterActions'
 
 
 class App extends React.Component {
-
+		// ??? wtf
 		static contextTypes = {
 				store: PropTypes.object
 		};
 
-		decrementHandler = () => {
-			actions.decrementCounter(this.props.counter)
+
+		incrementHandler = ()=> {
+			this.props.incrementDispatch(this.props.counter+1);
 		}
 
-		incrementHandler = () => {
-			actions.incrementCounter(this.props.counter)
+		decrementHandler = ()=> {
+			this.props.decrementDispatch(this.props.counter-1);
 		}
+
 
 		render() {
 			return (
@@ -28,12 +30,8 @@ class App extends React.Component {
 						<button 
 							onClick={ this.incrementHandler }>+1
 						</button>
-						<h2>
-							Counter value decrement:
-							{this.props.counter}
-						</h2>
 						<button 
-							onClick={this.decrementHandler}>-1
+							onClick={ this.decrementHandler }>-1
 						</button>
 					</div>
 			);
@@ -44,6 +42,16 @@ const mapStateToProps = state => ({
 		 counter: state.counter
  })
 
-const mapDispatchToProps = dispatch => ({})
+const mapDispatchToProps = dispatch => ({
+	incrementDispatch(newCounterValue){
+		const action = counterActions.incrementCounter(newCounterValue);
+		dispatch(action);
+	},
+
+	decrementDispatch(newCounterValue) {
+		const action = counterActions.decrementCounter(newCounterValue);
+		dispatch(action);
+	}
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,13 +1,17 @@
  // 2 add new reducer
 
- const counterReducer = (state = null, action) => {
+ const counterReducer = (counterState = 0, action) => {
     switch (action.type) {
+
         case 'INCREMENT_COUNTER':
-            return action.counter;
+        		// console.log('INCREMENT_COUNTER action, state: ', counterState)
+            return action.newCounterValue;
+
         case 'DECREMENT_COUNTER':
-        		return action.counter;
+        		return --counterState;
+
         default:
-            return state;
+            return counterState;
     }
 };
 

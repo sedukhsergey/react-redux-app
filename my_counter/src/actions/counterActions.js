@@ -1,21 +1,18 @@
-import store from '../stores/store';
-
 // 1 add new action
 
-const incrementCounter = (newValue)=> (
-	store.dispatch({
+const incrementCounter = (newCounterValue)=> {
+	return {
 	    type: 'INCREMENT_COUNTER',
-	    counter: ++newValue
-	}
-	)
-)
+	    newCounterValue
+	};
+}
+
 
 const decrementCounter = (newValue) => {
-	store.dispatch({
-		type: 'DECREMENT_COUNTER',
-		counter: --newValue
+
+	return {
+	    type: 'DECREMENT_COUNTER'
 	}
-	)
 }
 
 export default {incrementCounter, decrementCounter};
