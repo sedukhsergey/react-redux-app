@@ -15,8 +15,6 @@ class AutorizationPage extends React.Component {
 		}
 
 	render() {
-	console.log('---',this.props.login)
-	
 		return (
 			<div>
 				<form id='autorizationForm' 
@@ -40,7 +38,6 @@ class AutorizationPage extends React.Component {
 }
 
 const mapStateToProps = store => {
-	console.log('--- store', store)
 	return {
 		 login: store.login,
 		 password: store.password
