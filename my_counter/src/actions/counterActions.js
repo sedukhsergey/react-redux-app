@@ -15,4 +15,6 @@ const decrementCounter = (newValue) => {
 	}
 }
 
+
+
 export default {incrementCounter, decrementCounter};
