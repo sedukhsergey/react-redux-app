@@ -15,6 +15,7 @@ class Counter extends React.Component {
 	}
 
 		render() {
+			console.log('---',this.props)
 			return (
 					<div>
 						<h2>
@@ -34,11 +35,8 @@ class Counter extends React.Component {
 
 const mapStateToProps = store => {
 	return {
-		 counter: store.counter,
-		 users: store.users,
  }
 }
-
 
 const mapDispatchToProps = dispatch => ({
 	incrementDispatch(newCounterValue){

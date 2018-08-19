@@ -5,21 +5,38 @@ import counterActions from '../actions/counterActions'
 import userActions from '../actions/userActions'
 
 class AutorizationPage extends React.Component {
+	
+	// add prop types
+	state = {
+		login: '',
+		password: ''
+	}
 
 	changeUserLogin = (e) => {
-			this.props.decrementChangeLogin(e.target.value)
-		}
+		this.setState({
+			login: e.target.value
+		})
+	}
 
 	changeUserPassword = (e) => {
-			this.props.decrementChangePassword(e.target.value)
-		}
+		this.setState({
+			password: e.target.value
+		})
+	}
+
+	handleClickSubmit = (e) => {
+		e.preventDefault();
+		this.props.dispatchAuth({
+			login: this.state.login,
+			password: this.state.password 
+		})
+	}
 
 	render() {
 		return (
 			<div>
 				<form id='autorizationForm' 
-						onSubmit={this.handleClickSubmit}
-						>
+						onSubmit={this.handleClickSubmit}>
 					<p> 
 						<input type="text" 
 									onChange={this.changeUserLogin}
@@ -30,7 +47,9 @@ class AutorizationPage extends React.Component {
 									onChange={this.changeUserPassword}
 								/> Password 
 					</p>
-						<input type="submit" value='Submit'/>
+						<input type="submit" 
+									value='Submit'
+									/>
 				</form>
 			</div>
 			);
@@ -39,24 +58,17 @@ class AutorizationPage extends React.Component {
 
 const mapStateToProps = store => {
 	return {
-		 login: store.login,
-		 password: store.password
  }
 }
 
 
 const mapDispatchToProps = dispatch => (
 	{
-		decrementChangeLogin(newValue) {
-			const login = userActions.loginUser(newValue);
-			dispatch(login)
-		},
-		decrementChangePassword(newValue) {
-			const password = userActions.passwordUser(newValue);
-			dispatch(password)
+		dispatchAuth(user) {
+			const userAction = userActions.auth(user);
+			dispatch(userAction);
 		}
 	}
 )
-// redux magic
 
 export default connect(mapStateToProps, mapDispatchToProps)(AutorizationPage)

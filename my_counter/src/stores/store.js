@@ -1,21 +1,17 @@
 import {createStore, combineReducers} from 'redux';
-import counterReducer from '../reducers/reducer'
-import userReducer from '../reducers/userReducer'
-import userLoginReducer from '../reducers/userLoginReducer'
-import userPasswordReducer from '../reducers/userPasswordReducer'
+import counterReducer from '../reducers/counterReducer'
+import uReducer from '../reducers/uReducer'
+
 
 const store = createStore(
 		combineReducers(
 			{
 				counter: counterReducer,
-				users: userReducer,
-				login: userLoginReducer,
-				password: userPasswordReducer
-					}
+				user: uReducer
+			}
 		)
 );
 
-
-// store.subscribe( () => console.log( '---',store.getState() ) )
+store.subscribe( () => console.log( '---',store.getState() ) )
 
 export default store;

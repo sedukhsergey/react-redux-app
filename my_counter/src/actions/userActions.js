@@ -1,14 +1,11 @@
 
-const loginUser = (newValue) => {
-	return {
-		type: newValue
-	}
+const auth = (data) => {
+		return {
+			type: 'AUTH',
+			data
+		}
 }
 
-const passwordUser = (newValue) => {
-	return {
-		type: newValue
-	}
-}
-
-export default { loginUser, passwordUser};
+export default {  
+	auth
+ };

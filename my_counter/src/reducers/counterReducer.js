@@ -1,6 +1,7 @@
  // 2 add new reducer
 
 const initState = 0;
+// rename in counterReducer
 
 // this function returns new state
  const counterReducer = (stateCounter = initState, action) => {
