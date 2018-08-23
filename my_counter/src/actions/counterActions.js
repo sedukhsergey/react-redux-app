@@ -1,20 +1,19 @@
-// 1 add new action
 
 const incrementCounter = (newCounterValue)=> {
 	return {
-	    type: 'INCREMENT_COUNTER',
-	    newCounterValue
+		type: 'INCREMENT_COUNTER',
+		newCounterValue
 	};
 }
 
 
-const decrementCounter = (newValue) => {
+const dicrementCounter = (newValue) => {
 
 	return {
-	    type: 'DECREMENT_COUNTER'
+		type: 'DICREMENT_COUNTER'
 	}
 }
 
 
 
-export default {incrementCounter, decrementCounter};
+export default {incrementCounter, dicrementCounter};

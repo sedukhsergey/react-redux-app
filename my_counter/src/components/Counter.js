@@ -1,54 +1,47 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {connect} from 'react-redux';
-import counterActions from '../actions/counterActions'
 
 
-class Counter extends React.Component {
+class Counter extends Component {
+	
+	static propTypes = {
+		counter: PropTypes.number,
+		incrementDispatch: PropTypes.func,
+		dicrementDispatch: PropTypes.func
+	}
 
-		incrementHandler = () => {
-			this.props.incrementDispatch(this.props.counter+1);
+	incrementHandler = () => {
+		this.props.incrementDispatch(this.props.counter+1);
 	}
 
 	decrementHandler = () => {
-		this.props.decrementDispatch(this.props.counter-1);
+		this.props.dicrementDispatch(this.props.counter-1);
 	}
 
-		render() {
-			console.log('---',this.props)
-			return (
-					<div>
-						<h2>
-							Counter value increment: 
-							{this.props.counter}
-						</h2>
-						<button 
-							onClick={ this.incrementHandler }>+1
-						</button>
-						<button 
-							onClick={ this.decrementHandler }>-1
-						</button>
-					</div>
-			);
-		}
+	render() {
+
+		return (
+				<div>
+					<h2>
+						Counter value increment: 
+						{this.props.counter}
+					</h2>
+					<button 
+						onClick={ this.incrementHandler }>+1
+					</button>
+					<button 
+						onClick={ this.decrementHandler }>-1
+					</button>
+				</div>
+		);
+	}
 }
+// make one increment function instead of two
 
-const mapStateToProps = store => {
-	return {
- }
-}
+	// Counter.propTypes = {
+	// 	counter: PropTypes.number
+	// }
 
-const mapDispatchToProps = dispatch => ({
-	incrementDispatch(newCounterValue){
-		const action = counterActions.incrementCounter(newCounterValue);
-		dispatch(action);
-	},
+export default Counter;
 
-	decrementDispatch(newCounterValue) {
-		const action = counterActions.decrementCounter(newCounterValue);
-		dispatch(action);
-	},
 
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);

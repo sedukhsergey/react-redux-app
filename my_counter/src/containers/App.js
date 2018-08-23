@@ -1,43 +1,40 @@
 import React from 'react'
-
-import PropTypes from 'prop-types'
-
 import {connect} from 'react-redux';
-
 import counterActions from '../actions/counterActions'
-
+import userActions from '../actions/userActions'
 import AutorizationPage from '../components/AutorizationPage'
-
 import Counter from '../components/Counter'
-
 import ProfilePage from '../components/ProfilePage'
+import Header from '../components/Header'
 
 
 class App extends React.Component {
 
+	get someData() { return 1 }
+// make getters for isUserAuth, userAuthData
 	render() {
+	const isUserAuth = this.props.login && this.props.password
 
-		const isUserAuth = this.props.login && this.props.password
+	const userAuthData = {
+		login: this.props.login,
+		password: this.props.password
+	}
+	
 
-		const userAuthData = {
-			login: this.props.login,
-			password: this.props.password
-		}
-
-		const counter = this.props.counter
-
-		return (
-
-				<div>
-					<Counter counter = { counter } />
-					{ isUserAuth ?
-						<ProfilePage userAuthData = { userAuthData } /> 
-						: 
-						<AutorizationPage />
-					}
-				</div>
-
-		);
+	// throw dispatch functions through props also
+	return (
+			<div>
+				<Header />
+				<Counter counter={this.props.counter}
+					incrementDispatch={this.props.incrementDispatch}
+					dicrementDispatch={this.props.dicrementDispatch}/>
+				{ isUserAuth ?
+					<ProfilePage userAuthData = {userAuthData} /> 
+					:
+					<AutorizationPage dispatchAuth={this.props.dispatchAuth}/>
+				}
+			</div>
+	);
 
 	}
 
@@ -57,10 +54,14 @@ const mapDispatchToProps = dispatch => ({
 		dispatch(action);
 	},
 
-	decrementDispatch(newCounterValue) {
-		const action = counterActions.decrementCounter(newCounterValue);
+	dicrementDispatch(newCounterValue) {
+		const action = counterActions.dicrementCounter(newCounterValue);
 		dispatch(action);
 	},
+	dispatchAuth(user) {
+	const userAction = userActions.auth(user);
+	dispatch(userAction);
+}
 
 })
 

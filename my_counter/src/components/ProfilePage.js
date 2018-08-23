@@ -1,12 +1,15 @@
 
 import React from 'react'
 
-import PropTypes from 'prop-types'
-
-import { connect } from 'react-redux';
-
-
 class ProfilePage extends React.Component {
+
+	clearLocalStorage = () => {
+		localStorage.clear()
+	}
+
+	showLocalStorage = () => {
+		console.log('---',localStorage)
+	}
 
 	render() {
 
@@ -22,6 +25,17 @@ class ProfilePage extends React.Component {
 					<h3>
 					Password: { password }
 					</h3>
+					<p>
+						<button 
+							onClick={this.clearLocalStorage}
+						>
+							Clear localStorage
+						</button>
+						<button 
+							onClick={this.showLocalStorage}>
+							show localStorage
+						</button>
+					</p>
 				</div>
 
 		);
@@ -29,5 +43,7 @@ class ProfilePage extends React.Component {
 	}
 
 }
+
+
 
 export default ProfilePage;

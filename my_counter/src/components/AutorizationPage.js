@@ -1,28 +1,49 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {connect} from 'react-redux';
-import counterActions from '../actions/counterActions'
-import userActions from '../actions/userActions'
 
 class AutorizationPage extends React.Component {
-	
-	// add prop types
-	state = {
-		login: '',
-		password: ''
+
+	static propTypes = {
+		dispatchAuth: PropTypes.func
 	}
 
+	state = {
+		login: null,
+		password: null
+	}
+		
+
+
 	changeUserLogin = (e) => {
-		this.setState({
-			login: e.target.value
-		})
+		let inputValue = e.target.value
+		this.setState( () => ({
+			login: inputValue,
+		}))
 	}
 
 	changeUserPassword = (e) => {
-		this.setState({
-			password: e.target.value
-		})
+		let inputValue = e.target.value
+		this.setState(() => ({
+			password: inputValue
+		}))
 	}
+
+	changeLocalStorage = () => {
+		let userData = 
+		{
+			login: this.state.login,
+			password: this.state.password
+		};
+
+		let serialObj = JSON.stringify(userData)
+		localStorage.setItem(this.state.login, serialObj)
+	}
+
+	parseLocalStorage = (elem) => {
+		let objParse = JSON.parse(localStorage.getItem(elem))
+		return objParse
+	}
+
 
 	handleClickSubmit = (e) => {
 		e.preventDefault();
@@ -30,9 +51,14 @@ class AutorizationPage extends React.Component {
 			login: this.state.login,
 			password: this.state.password 
 		})
+		this.changeLocalStorage()
 	}
 
+
+
+
 	render() {
+		console.log('---',localStorage)
 		return (
 			<div>
 				<form id='autorizationForm' 
@@ -48,7 +74,7 @@ class AutorizationPage extends React.Component {
 								/> Password 
 					</p>
 						<input type="submit" 
-									value='Submit'
+									value='Войти'
 									/>
 				</form>
 			</div>
@@ -56,19 +82,5 @@ class AutorizationPage extends React.Component {
 		}
 }
 
-const mapStateToProps = store => {
-	return {
- }
-}
 
-
-const mapDispatchToProps = dispatch => (
-	{
-		dispatchAuth(user) {
-			const userAction = userActions.auth(user);
-			dispatch(userAction);
-		}
-	}
-)
-
-export default connect(mapStateToProps, mapDispatchToProps)(AutorizationPage)
+export default AutorizationPage
