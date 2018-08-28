@@ -9,7 +9,8 @@ class AutorizationPage extends React.Component {
 
 	state = {
 		login: null,
-		password: null
+		password: null,
+		// isOpened: false
 	}
 		
 
@@ -17,7 +18,7 @@ class AutorizationPage extends React.Component {
 	changeUserLogin = (e) => {
 		let inputValue = e.target.value
 		this.setState( () => ({
-			login: inputValue,
+			login: inputValue
 		}))
 	}
 
@@ -39,26 +40,29 @@ class AutorizationPage extends React.Component {
 		localStorage.setItem(this.state.login, serialObj)
 	}
 
-	parseLocalStorage = (elem) => {
-		let objParse = JSON.parse(localStorage.getItem(elem))
-		return objParse
-	}
+	// userVerification = (login) => {
+	// 	let objParse = JSON.parse(localStorage.getItem(login));
+	// 	return objParse ? true : false
+	// }
 
 
 	handleClickSubmit = (e) => {
-		e.preventDefault();
-		this.props.dispatchAuth({
+		// if (!this.userVerification(this.state.login)) {
+		// 	this.setState(() => ({
+		// 		isOpened: !this.state.isOpened
+		// 	}))
+		// }	else {
+			e.preventDefault();
+			this.props.dispatchAuth({
 			login: this.state.login,
 			password: this.state.password 
-		})
-		this.changeLocalStorage()
+			})
+			this.changeLocalStorage()
+		// }
+		
 	}
 
-
-
-
 	render() {
-		console.log('---',localStorage)
 		return (
 			<div>
 				<form id='autorizationForm' 

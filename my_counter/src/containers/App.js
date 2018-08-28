@@ -5,14 +5,19 @@ import userActions from '../actions/userActions'
 import AutorizationPage from '../components/AutorizationPage'
 import Counter from '../components/Counter'
 import ProfilePage from '../components/ProfilePage'
-import Header from '../components/Header'
 
 
 class App extends React.Component {
 
-	get someData() { return 1 }
+	get someData() { 
+		return {
+			login: this.props.login,
+			password: this.props.password
+		}
+	}
 // make getters for isUserAuth, userAuthData
 	render() {
+
 	const isUserAuth = this.props.login && this.props.password
 
 	const userAuthData = {
@@ -24,7 +29,6 @@ class App extends React.Component {
 	// throw dispatch functions through props also
 	return (
 			<div>
-				<Header />
 				<Counter counter={this.props.counter}
 					incrementDispatch={this.props.incrementDispatch}
 					dicrementDispatch={this.props.dicrementDispatch}/>
@@ -49,15 +53,15 @@ const mapStateToProps = store => {
 }
 
 const mapDispatchToProps = dispatch => ({
-	incrementDispatch(newCounterValue){
-		const action = counterActions.incrementCounter(newCounterValue);
-		dispatch(action);
-	},
 
-	dicrementDispatch(newCounterValue) {
+	incrementDispatch(newCounterValue){
+			const action = counterActions.incrementCounter(newCounterValue);
+			dispatch(action);
+		},
+	dicrementDispatch(newCounterValue){
 		const action = counterActions.dicrementCounter(newCounterValue);
 		dispatch(action);
-	},
+		},
 	dispatchAuth(user) {
 	const userAction = userActions.auth(user);
 	dispatch(userAction);
