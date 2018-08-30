@@ -14,12 +14,11 @@ class ModalBlock extends React.Component {
 	}
 
 	render() {
+		console.log('---','Hello')
 		let { login, password } = { ...this.props.userAuthData }
 		return (
 				<div className='modal'>
 					<div className='modalBlock'>
-					<p>Lorem</p>
-					<p>dd</p>
 						<span className='exit'
 									onClick={this.hideBlock}>x</span>
 						<h1>Hello! {login}</h1>
