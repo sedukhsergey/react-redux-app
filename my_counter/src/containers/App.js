@@ -2,46 +2,33 @@ import React from 'react'
 import {connect} from 'react-redux';
 import counterActions from '../actions/counterActions'
 import userActions from '../actions/userActions'
-import AutorizationPage from '../components/AutorizationPage'
-import Counter from '../components/Counter'
-import ProfilePage from '../components/ProfilePage'
+import Header from '../components/Header'
+import Article from '../components/Article'
 
-
+// Create modal for all display
+// refact your code(dispatch, console.log, fix variable, )
+// create router for your components
+// fix you timer (clear store)
 class App extends React.Component {
-
-	get someData() { 
-		return {
-			login: this.props.login,
-			password: this.props.password
-		}
-	}
-// make getters for isUserAuth, userAuthData
 	render() {
-
-	const isUserAuth = this.props.login && this.props.password
 
 	const userAuthData = {
 		login: this.props.login,
 		password: this.props.password
 	}
-	
 
-	// throw dispatch functions through props also
 	return (
 			<div>
-				<Counter counter={this.props.counter}
-					incrementDispatch={this.props.incrementDispatch}
-					dicrementDispatch={this.props.dicrementDispatch}/>
-				{ isUserAuth ?
-					<ProfilePage userAuthData = {userAuthData} /> 
-					:
-					<AutorizationPage dispatchAuth={this.props.dispatchAuth}/>
-				}
+				<Header counter={this.props.counter}
+						incrementDispatch={this.props.incrementDispatch}
+						dicrementDispatch={this.props.dicrementDispatch}
+						userAuthData = {userAuthData}
+						dispatchAuth={this.props.dispatchAuth}
+				/>
+				<Article />
 			</div>
 	);
-
 	}
-
 }
 
 const mapStateToProps = store => {
@@ -63,9 +50,9 @@ const mapDispatchToProps = dispatch => ({
 		dispatch(action);
 		},
 	dispatchAuth(user) {
-	const userAction = userActions.auth(user);
-	dispatch(userAction);
-}
+		const userAction = userActions.auth(user);
+		dispatch(userAction);
+	}
 
 })
 

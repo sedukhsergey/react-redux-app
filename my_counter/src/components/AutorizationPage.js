@@ -10,10 +10,10 @@ class AutorizationPage extends React.Component {
 	state = {
 		login: null,
 		password: null,
-		// isOpened: false
+		isOpened: false
 	}
 		
-
+// add propTypes
 
 	changeUserLogin = (e) => {
 		let inputValue = e.target.value
@@ -40,45 +40,40 @@ class AutorizationPage extends React.Component {
 		localStorage.setItem(this.state.login, serialObj)
 	}
 
-	// userVerification = (login) => {
-	// 	let objParse = JSON.parse(localStorage.getItem(login));
-	// 	return objParse ? true : false
-	// }
+	userVerification = (login) => {
+		let objParse = JSON.parse(localStorage.getItem(login));
+		 console.log('ObjParse',!!objParse)
+	}
 
 
 	handleClickSubmit = (e) => {
-		// if (!this.userVerification(this.state.login)) {
-		// 	this.setState(() => ({
-		// 		isOpened: !this.state.isOpened
-		// 	}))
-		// }	else {
 			e.preventDefault();
 			this.props.dispatchAuth({
 			login: this.state.login,
 			password: this.state.password 
 			})
 			this.changeLocalStorage()
-		// }
 		
 	}
 
 	render() {
 		return (
-			<div>
+			<div className="autorizationPage">
 				<form id='autorizationForm' 
 						onSubmit={this.handleClickSubmit}>
 					<p> 
 						<input type="text" 
 									onChange={this.changeUserLogin}
-							/> Login 
+							/> <span>Login</span>
 					</p>
 					<p> 
 						<input type="password"
 									onChange={this.changeUserPassword}
-								/> Password 
+								/> <span>Password</span> 
 					</p>
 						<input type="submit" 
 									value='Войти'
+									className='btn'
 									/>
 				</form>
 			</div>

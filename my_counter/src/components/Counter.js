@@ -21,16 +21,18 @@ class Counter extends Component {
 	render() {
 
 		return (
-				<div>
+				<div className='counter'>
 					<h2>
 						Counter value increment: 
 						{this.props.counter}
 					</h2>
 					<button 
-						onClick={ this.incrementHandler }>+1
+						onClick={ this.incrementHandler } 
+						className='btn'>+1
 					</button>
 					<button 
-						onClick={ this.decrementHandler }>-1
+						onClick={ this.decrementHandler } 
+						className='btn'>-1
 					</button>
 				</div>
 		);
