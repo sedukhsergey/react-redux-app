@@ -1,46 +1,63 @@
-import React from 'react'
-import UserDataBlock from '../components/UserDataBlock'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
-class ProfilePage extends React.Component {
-	state = {
-		isOpened: true,
+import UserDataBlock from '../components/UserDataBlock'
+import ModalBlock from '../components/ModalBlock'
+
+class ProfilePage extends Component {
+
+	static propTypes = {
+		userLogin: PropTypes.string.isRequired,
+		userPassword: PropTypes.string.isRequired
 	}
 
-// add propTypes
-	hideBlock = (e) => {
+	state = {
+		isModalBlockOpened: true,
+		isLoginSkip: false,
+	}
+
+	acceptLogin = () => {
 		this.setState(() => ({
-			isOpened: !this.state.isOpened
+			isModalBlockOpened: !this.state.isModalBlockOpened,
 		}))
 	}
 
-	render() {
-		let { login, password } = { ...this.props.userAuthData }
-		let isOpened = this.state.isOpened
-		return (
-				<div>
-					{
-						isOpened ?
-						<div className='modalBlock'>
-							<span className='exit'
-										onClick={this.hideBlock}>x</span>
-							<h1>Hello! {login}</h1>
-							<p>
-								<button className='accept'
-											onClick={this.hideBlock}><span>Accept</span></button>
-								<button className='reject'
-											onClick={this.hideBlock}><span>Reject</span></button>
-							</p>
-						</div>
-						:
-						<UserDataBlock userAuthData={this.props.userAuthData}/>
-					}
-				</div>
-		);
-
+	skipLogin = () => {
+		this.setState(() => ({
+			isModalBlockOpened: !this.state.isModalBlockOpened,
+			isLoginSkip: !this.state.isLoginSkip
+		}))
 	}
 
+	renderModalBlock() {
+		if(!this.state.isModalBlockOpened) return null;
+		return (
+				<ModalBlock 
+					acceptLogin={this.acceptLogin}
+					skipLogin={this.skipLogin}
+					userLogin={this.props.userLogin} />
+				)
+		}
+
+	renderUserDataBlock() {
+		if ( this.state.isModalBlockOpened ) 
+			return null
+			else if ( this.state.isLoginSkip ) 
+				return	<span className='userData'>
+									Welcome guest
+								</span>
+				else
+					return <UserDataBlock userLogin={this.props.userLogin} />
+	}
+
+	render() {
+		return (
+			<div className='profile_page'>
+				{ this.renderModalBlock() }
+				{ this.renderUserDataBlock() }
+			</div>
+		);
+	}
 }
-
-
 
 export default ProfilePage;

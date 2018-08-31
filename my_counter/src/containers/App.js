@@ -1,33 +1,26 @@
 import React from 'react'
 import {connect} from 'react-redux';
+
 import counterActions from '../actions/counterActions'
 import userActions from '../actions/userActions'
 import Header from '../components/Header'
 import Article from '../components/Article'
-
-// Create modal for all display
-// refact your code(dispatch, console.log, fix variable, )
-// create router for your components
-// fix you timer (clear store)
+import Content from '../components/Content'
 class App extends React.Component {
 	render() {
-
-	const userAuthData = {
-		login: this.props.login,
-		password: this.props.password
-	}
-
-	return (
+		return (
 			<div>
-				<Header counter={this.props.counter}
-						incrementDispatch={this.props.incrementDispatch}
-						dicrementDispatch={this.props.dicrementDispatch}
-						userAuthData = {userAuthData}
-						dispatchAuth={this.props.dispatchAuth}
+				<Header 
+					userLogin={this.props.login}
+					userPassword={this.props.password}
+					dispatchAuth={this.props.dispatchAuth}
 				/>
+				<Content 
+					counter={this.props.counter}
+					changeCounterDispatch={this.props.changeCounterDispatch} />
 				<Article />
 			</div>
-	);
+		)
 	}
 }
 
@@ -36,24 +29,18 @@ const mapStateToProps = store => {
 		 counter: store.counter,
 		 login: store.user.login,
 		 password: store.user.password
- }
+	}
 }
 
 const mapDispatchToProps = dispatch => ({
-
-	incrementDispatch(newCounterValue){
-			const action = counterActions.incrementCounter(newCounterValue);
-			dispatch(action);
-		},
-	dicrementDispatch(newCounterValue){
-		const action = counterActions.dicrementCounter(newCounterValue);
-		dispatch(action);
+		changeCounterDispatch(newCounterValue) {
+			const action = counterActions.changeCounter(newCounterValue);
+			dispatch(action)
 		},
 	dispatchAuth(user) {
 		const userAction = userActions.auth(user);
 		dispatch(userAction);
 	}
-
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

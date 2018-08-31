@@ -6,6 +6,6 @@ const auth = (data) => {
 		}
 }
 
-export default {  
+export default {
 	auth
  };

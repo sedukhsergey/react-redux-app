@@ -1,31 +1,35 @@
-import React from 'react'
-import Counter from '../components/Counter'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
+
 import ProfilePage from '../components/ProfilePage'
 import AutorizationPage from '../components/AutorizationPage'
 
+ class Header extends Component {
 
-class Header extends React.Component {
-	// add propTypes
+	static propTypes = {
+		dispatchAuth: PropTypes.func.isRequired,
+		userLogin: PropTypes.string,
+		userPassword: PropTypes.string
+	}
+
 	render() {
-		console.log('Headerd',this.props)
-		const isUserAuth = this.props.userAuthData.login && this.props.userAuthData.password
+		const isUserAuth = this.props.userLogin && this.props.userPassword
 		return (
 				<div className='header'>
-					{ isUserAuth ?
-						<ProfilePage userAuthData={this.props.userAuthData} /> 
+					{ 
+						isUserAuth ?
+						<ProfilePage 
+							userLogin={this.props.userLogin}
+							userPassword={this.props.userPassword}/> 
 						:
 						<AutorizationPage dispatchAuth={this.props.dispatchAuth}/>
 					}
-					<Counter counter={this.props.counter}
-						incrementDispatch={this.props.incrementDispatch}
-						dicrementDispatch={this.props.dicrementDispatch}/>
 				</div>
-
-		);
-
+		)
 	}
 }
 
-export default Header;
+export default Header
+
 
 

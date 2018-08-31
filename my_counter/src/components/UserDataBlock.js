@@ -1,24 +1,19 @@
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
-import React from 'react'
-
-class UserDataBlock extends React.Component {
-
-	render() {
-		let { login, password } = { ...this.props.userAuthData }
-		return (
-				<div className='userData'>
-					<ul>
-						<li><span>login: {login}</span></li>
-					</ul>
-				</div>
-
-
-		);
-
+class UserDataBlock extends Component {
+	static propTypes = {
+		userLogin: PropTypes.string.isRequired
 	}
-
+	render() {
+		return (
+			<div className='userData'>
+				<ul>
+					<li><span>login: {this.props.userLogin}</span></li>
+				</ul>
+			</div>
+		);
+	}
 }
-
-
 
 export default UserDataBlock;

@@ -1,11 +1,9 @@
 import React from 'react'
 
-
 class Timer extends React.Component {
 
 	state = {
 		value: 0,
-		INTERVAL: 100
 	}
 	
 	increment = () => {
@@ -15,36 +13,39 @@ class Timer extends React.Component {
 	}
 
 	startTimer = () => {
-		this.timerID = setInterval(this.increment, 1000/this.state.INTERVAL)
+		this.timerID = setInterval(this.increment, 10)
 	}
 
 	stopTimer = () => {
 		clearInterval(this.timerID)
-		// clear timer
-		// ? clear state
+		this.setState(() => ({
+			value: 0
+		}))
 	}
 
 	render() {
 		const value = this.state.value
 		return (
 				<div className='timer'>
-				<p><h3>Timer</h3></p>
-				<p>
-					<span>{Math.round(value/this.state.INTERVAL/60/60)}:</span>
-					<span>{Math.round(value/this.state.INTERVAL/60)}:</span>
-					<span>{Math.round(value/this.state.INTERVAL)}.</span>
-					<span>{value % this.state.INTERVAL}</span>
-				</p>
-				<button 
-					onClick={this.startTimer}
-					className='btn'>
-						Start timer
-				</button>
-				<button 
-					onClick={this.stopTimer}
-					className='btn'>
-						Stop timer
-				</button>
+					<div className="timer_container">
+						<h3>Timer</h3>
+						<p>
+							<span>{Math.round(value/100/60/60)}:</span>
+							<span>{Math.round(value/100/60)}:</span>
+							<span>{Math.round(value/100)}.</span>
+							<span>{value % 100}</span>
+						</p>
+					</div>
+						<button 
+							onClick={this.startTimer}
+							className='btn'>
+								Start timer
+						</button>
+						<button 
+							onClick={this.stopTimer}
+							className='btn'>
+								Stop timer
+						</button>
 				</div>
 		);
 	}

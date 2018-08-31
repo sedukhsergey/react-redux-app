@@ -1,41 +1,37 @@
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
-import React from 'react'
-
-class ModalBlock extends React.Component {
-	state = {
-		isOpened: true,
+class ModalBlock extends Component {
+	static propTypes = {
+		acceptLogin: PropTypes.func.isRequired,
+		skipLogin: PropTypes.func.isRequired,
+		userLogin: PropTypes.string.isRequired,
 	}
-
-
-	hideBlock = (e) => {
-		this.setState(() => ({
-			isOpened: !this.state.isOpened
-		}))
-	}
-
 	render() {
-		console.log('---','Hello')
-		let { login, password } = { ...this.props.userAuthData }
 		return (
-				<div className='modal'>
-					<div className='modalBlock'>
-						<span className='exit'
-									onClick={this.hideBlock}>x</span>
-						<h1>Hello! {login}</h1>
-						<p>
-							<button className='accept'
-										onClick={this.hideBlock}><span>Accept</span></button>
-							<button className='reject'
-										onClick={this.hideBlock}><span>Reject</span></button>
-						</p>
+		<div className="fixed-overlay">
+			<div className='modal'>
+				<div className='modal_container'>
+					<span className='exit'
+								onClick={this.props.skipLogin}>x</span>
+					<h1>Do you want continue? {this.props.userLogin}</h1>
+					<p>
+						<button className='accept'
+										onClick={this.props.acceptLogin}>
+							<span>Accept</span>
+						</button>
+						<button className='reject'
+										onClick={this.props.skipLogin}>
+							<span>Cansel</span>
+						</button>
+					</p>
 				</div>
 			</div>
+		</div>
 		);
 
 	}
 
 }
-
-
 
 export default ModalBlock;

@@ -1,19 +1,10 @@
-
-const incrementCounter = (newCounterValue)=> {
+const changeCounter = (newValue) => {
 	return {
-		type: 'INCREMENT_COUNTER',
-		newCounterValue
-	};
-}
-
-
-const dicrementCounter = (newValue) => {
-
-	return {
-		type: 'DICREMENT_COUNTER'
+		type: 'CHANGE_COUNTER',
+		data: newValue
 	}
 }
 
 
 
-export default {incrementCounter, dicrementCounter};
+export default {changeCounter};

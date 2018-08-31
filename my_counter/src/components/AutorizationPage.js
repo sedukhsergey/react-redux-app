@@ -1,33 +1,21 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-class AutorizationPage extends React.Component {
+class AutorizationPage extends Component {
 
 	static propTypes = {
-		dispatchAuth: PropTypes.func
+		dispatchAuth: PropTypes.func.isRequired
 	}
 
 	state = {
+		isOpened: false,
 		login: null,
-		password: null,
-		isOpened: false
-	}
-		
-// add propTypes
-
-	changeUserLogin = (e) => {
-		let inputValue = e.target.value
-		this.setState( () => ({
-			login: inputValue
-		}))
+		password: null
 	}
 
-	changeUserPassword = (e) => {
-		let inputValue = e.target.value
-		this.setState(() => ({
-			password: inputValue
-		}))
-	}
+	//shouldComponentUpdate(prevProps, prevState) {
+		// return false;
+	//}
 
 	changeLocalStorage = () => {
 		let userData = 
@@ -35,51 +23,57 @@ class AutorizationPage extends React.Component {
 			login: this.state.login,
 			password: this.state.password
 		};
-
 		let serialObj = JSON.stringify(userData)
 		localStorage.setItem(this.state.login, serialObj)
 	}
 
-	userVerification = (login) => {
-		let objParse = JSON.parse(localStorage.getItem(login));
-		 console.log('ObjParse',!!objParse)
+	changeLogin =(e) => {
+		let inputValue = e.target.value
+		this.setState(() => ({
+			login: inputValue
+		}))
 	}
 
+	changePassword =(e) => {
+		let inputValue = e.target.value
+		this.setState(() => ({
+			password: inputValue
+		}))
+	}
 
 	handleClickSubmit = (e) => {
-			e.preventDefault();
-			this.props.dispatchAuth({
-			login: this.state.login,
-			password: this.state.password 
-			})
-			this.changeLocalStorage()
-		
+		e.preventDefault();
+		this.props.dispatchAuth({
+		login: this.state.login,
+		password: this.state.password 
+		})
+		this.changeLocalStorage()
 	}
 
 	render() {
 		return (
 			<div className="autorizationPage">
 				<form id='autorizationForm' 
-						onSubmit={this.handleClickSubmit}>
-					<p> 
-						<input type="text" 
-									onChange={this.changeUserLogin}
-							/> <span>Login</span>
-					</p>
-					<p> 
-						<input type="password"
-									onChange={this.changeUserPassword}
-								/> <span>Password</span> 
-					</p>
+							onSubmit={this.handleClickSubmit}>
 						<input type="submit" 
 									value='Войти'
-									className='btn'
-									/>
+									className='btn authBtn' />
+					<p> 
+						<span>Login</span>
+						<input type="text"
+									placeholder='Enter your login'
+									onChange={this.changeLogin} />
+					</p>
+					<p> 
+						<span>Password</span> 
+						<input type="password"
+									 placeholder='Enter your password'
+									 onChange={this.changePassword} />
+					</p>
 				</form>
 			</div>
 			);
 		}
 }
-
 
 export default AutorizationPage
