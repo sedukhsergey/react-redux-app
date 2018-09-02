@@ -2,10 +2,26 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 class Counter extends Component {
-
+	state = {
+		counter: 0,
+	}
+	
 	static propTypes = {
-		counter: PropTypes.number.isRequired,
 		changeCounterDispatch: PropTypes.func.isRequired
+	}
+
+	onIncrease = ()=>{
+		this.setState(prevState =>({
+			counter: prevState.counter + 1
+		}))
+		this.props.changeCounterDispatch(1)
+	}
+
+	onDecrease = () =>{
+		this.setState(prevState =>({
+			counter: prevState.counter - 1 
+		}))
+		this.props.changeCounterDispatch(-1)
 	}
 
 	render() {
@@ -13,14 +29,14 @@ class Counter extends Component {
 				<div className='counter'>
 					<h2>
 						Counter value increment: 
-						<span>{this.props.counter}</span>
+						<span>{this.state.counter}</span>
 					</h2>
 					<button 
-						onClick={ ()=> this.props.changeCounterDispatch(1) } 
+						onClick={ this.onIncrease } 
 						className='btn'>+1
 					</button>
 					<button 
-						onClick={ ()=> this.props.changeCounterDispatch(-1) } 
+						onClick={ this.onDecrease } 
 						className='btn'>-1
 					</button>
 				</div>

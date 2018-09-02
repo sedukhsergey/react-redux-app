@@ -2,13 +2,13 @@ body {
 	background: #5C6C8D;
 	color: white;
 	font-family: 'RobotoRegular', Arial, sans-serif;
-	transition: all 1s;
 }
 
 * input {
 	color: #888;
 	padding: 6px;
 	margin-right: 10px;
+	    box-shadow: 2px 2px 2px #888;
 }
 
 * button, input[type='submit'] {
@@ -109,6 +109,7 @@ body {
 }
 
 .modal {
+	 	box-shadow: 0px 2px 6px #3e3d49;
     position: absolute;
     left: 25%;
     right: 25%;
@@ -120,7 +121,6 @@ body {
 
 .modal_container {
     background-color: #fff;
-
 }
 
 
@@ -153,9 +153,17 @@ body {
 	height: 69px;
 }
 
-.modal_container button:hover {
-	background: #92BAE5;
+.fixed-overlay .modal .modal_container button:hover {
+	background: #ffc04d;
 }
+
+.fixed-overlay .modal .modal_container button:hover span {
+	background: #eee;
+	color: #5c6c8d;
+	text-shadow: 1px 1px 1px #555;
+	box-shadow: 2px 2px 4px #5c6c8d;
+}
+
 
 .modal_container button.accept {
 	background: #e77979;

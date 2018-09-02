@@ -1,11 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux';
-
 import counterActions from '../actions/counterActions'
 import userActions from '../actions/userActions'
 import Header from '../components/Header'
 import Article from '../components/Article'
 import Content from '../components/Content'
+
+
 class App extends React.Component {
 	render() {
 		return (
@@ -15,8 +16,7 @@ class App extends React.Component {
 					userPassword={this.props.password}
 					dispatchAuth={this.props.dispatchAuth}
 				/>
-				<Content 
-					counter={this.props.counter}
+				<Content
 					changeCounterDispatch={this.props.changeCounterDispatch} />
 				<Article />
 			</div>
@@ -26,7 +26,6 @@ class App extends React.Component {
 
 const mapStateToProps = store => {
 	return {
-		 counter: store.counter,
 		 login: store.user.login,
 		 password: store.user.password
 	}
