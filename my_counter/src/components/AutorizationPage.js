@@ -55,21 +55,23 @@ class AutorizationPage extends Component {
 			<div className="autorizationPage">
 				<form id='autorizationForm' 
 							onSubmit={this.handleClickSubmit}>
+					<div className='user_data_container'>
 						<input type="submit" 
 									value='Войти'
 									className='btn authBtn' />
-					<p> 
+						<p> 
 						<span>Login</span>
 						<input type="text"
 									placeholder='Enter your login'
 									onChange={this.changeLogin} />
-					</p>
-					<p> 
-						<span>Password</span> 
-						<input type="password"
-									 placeholder='Enter your password'
-									 onChange={this.changePassword} />
-					</p>
+						</p>
+						<p> 
+							<span>Password</span> 
+							<input type="password"
+										 placeholder='Enter your password'
+										 onChange={this.changePassword} />
+						</p>
+					</div>
 				</form>
 			</div>
 			);

@@ -1,25 +1,32 @@
 import React from 'react'
 import {connect} from 'react-redux';
+import {Route, Switch} from 'react-router-dom'
+
 import counterActions from '../actions/counterActions'
 import userActions from '../actions/userActions'
 import Header from '../components/Header'
-import Article from '../components/Article'
 import Content from '../components/Content'
-
-
-class App extends React.Component {
-	render() {
-		return (
-			<div>
-				<Header 
+import FormRegistration from '../components/FormRegistration'
+import Nav from '../components/Nav'
+{/*				<Header 
 					userLogin={this.props.login}
 					userPassword={this.props.password}
 					dispatchAuth={this.props.dispatchAuth}
 				/>
 				<Content
-					changeCounterDispatch={this.props.changeCounterDispatch} />
-				<Article />
-			</div>
+					changeCounterDispatch={this.props.changeCounterDispatch} />*/}
+
+class App extends React.Component {
+	render() {
+		return (
+			<div>
+				<Nav />
+				<Switch>
+					<Route exact path='/' component={Header}/>
+					<Route path='/registration' component={FormRegistration} />
+					<Route path='/content' component={Content}/>
+	    	</Switch>
+	    </div>
 		)
 	}
 }

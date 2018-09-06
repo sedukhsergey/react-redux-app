@@ -1,19 +1,35 @@
+* {
+	transition: all .6s;
+}
+
+
 body {
 	background: #5C6C8D;
 	color: white;
 	font-family: 'RobotoRegular', Arial, sans-serif;
 }
 
+
+
 * input {
 	color: #888;
-	padding: 6px;
-	margin-right: 10px;
-	    box-shadow: 2px 2px 2px #888;
+	padding: 3px;
+	margin-right: 10px;					
+	box-shadow: 2px 2px 2px #888;
+	font-size: 17px;
 }
 
 * button, input[type='submit'] {
 	cursor: pointer;
 }
+
+   li {
+    list-style-type: none;
+   }
+   ul {
+    margin: 0;
+    padding: 0; 
+   }
 
 .btn {
 	border: none;
@@ -32,17 +48,78 @@ body {
 
 #root {
 	overflow: hidden;
-	padding: 10px 20px;
+    padding: 5px 5px;
 	width: 90%;
 	margin: 0 auto;
 	background: #7d9ee557;
 	border-radius: 5px;
 	box-shadow: 0px 4px 3px #3b3d415e, -2px 0px 3px #3b3d415e, 2px 0px 3px #3b3d415e;
 }
+
+
+/******** Nav ********
+===============================*/
+
+#sidebar {
+	  margin-bottom: 10px;
+    width: 100%;
+    float: left;
+    background-color: inherit;
+    padding-top: -15px;
+    border-radius: 3px 3px 0 0;
+    display: block;
+}
+
+
+
+.nav {
+
+}
+
+.nav ul{
+
+}
+
+.nav li {
+    float: left;
+    margin-left: 10px;
+}
+
+
+.content_container ul li a, .nav li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'RobotoLight';
+    font-size: 1.3em;
+}
+
+.nav_link:hover {
+	color: #0320b9 ;
+}
+
+.nav__content {
+	position: relative;
+}
+
+
+/*Content*/
+
+.content_container {
+    width: 100%;
+    display: block;
+    padding-left: 3%;
+}
+
+
+
+
+
 /******** Header ********
 ===============================*/
+
+
 .header {
-	padding: 5px 16px;
+    padding: 5px 0px;
 	background: #03a9f4;
 	border-radius: 3px;
 	padding-bottom: 10px;
@@ -56,7 +133,7 @@ body {
 }
 /* Counter */
 .counter {
-	float:left;
+	float:right;
 }
 .counter h2 {
 	font-family: 'RobotoLight';
@@ -74,29 +151,33 @@ body {
     width: 100%;
 }
 
-#autorizationForm {
-}
-
-#autorizationForm p {
-    text-align: right;
-}
-
-.autorizationPage span {
-    display: inline;
-    text-align: center;
-    padding-right: 13px;
-    font-family: 'RobotoLight';
-    font-size: 20px;
-    width: 100%;
-}
 
 .authBtn {
-    float: left;
+    margin-top: 24px;
+    margin-right: 9px;
+    float: right;
+}
+
+.user_data_container {
+    display: inline-block;
+    width: 270px;
+    float: right;
+    padding-left: 28px;
+    margin-top: -18px;
+    font-size: 21px;
+    font-family: 'RobotoLight';
+}
+
+.user_data_container > p {
+    margin-bottom: 0px;
+}
+
+.user_data_container > p > span {
+	
 }
 
 
-
-/*modal_container*/
+/*Modal_container*/
 
 .fixed-overlay {
     position: fixed;
@@ -217,3 +298,48 @@ body {
 .timer_container {
 float:right;
 }
+
+/* FormRegistration */
+
+#form_registration_container {
+	color: #fff;
+	box-shadow: 0px 4px 3px #3b3d415e, -2px 0px 3px #3b3d415e, 2px 0px 3px #3b3d415e;
+	border-radius: 3px;
+	background: #8693b0;
+
+}
+
+#form_registration {
+	padding: 5px;
+}
+
+#form_registration legend {
+	font-size: 22px;
+	font-family: 'RobotoCondensed-Bold';
+}
+
+
+#form_registration fieldset {
+	border: 1px dotted #68DAEB;
+	margin-bottom: 20px;
+	
+}
+
+#form_registration p {
+    font-size: 22px;
+    font-family: 'RobotoLight';
+}
+
+#form_registration span {
+    font-size: 18px;
+    font-family: 'RobotoLight';
+}
+
+#form_registration input {
+	display: block;
+	margin-bottom: 5px;
+}
+
+
+
+

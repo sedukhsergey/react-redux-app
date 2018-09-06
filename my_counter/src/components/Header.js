@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import ProfilePage from '../components/ProfilePage'
 import AutorizationPage from '../components/AutorizationPage'
 
+
  class Header extends Component {
 
 	static propTypes = {
