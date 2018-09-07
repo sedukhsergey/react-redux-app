@@ -51,6 +51,7 @@ class ProfilePage extends Component {
 	}
 
 	render() {
+		console.log('ProfilePage',this.state)
 		return (
 			<div className='profile_page'>
 				{ this.renderModalBlock() }

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import ProfilePage from '../components/ProfilePage'
 import AutorizationPage from '../components/AutorizationPage'
 
-
  class Header extends Component {
 
 	static propTypes = {
@@ -13,19 +12,20 @@ import AutorizationPage from '../components/AutorizationPage'
 		userPassword: PropTypes.string
 	}
 
+
 	render() {
 		const isUserAuth = this.props.userLogin && this.props.userPassword
 		return (
-				<div className='header'>
-					{ 
-						isUserAuth ?
-						<ProfilePage 
-							userLogin={this.props.userLogin}
-							userPassword={this.props.userPassword}/> 
-						:
-						<AutorizationPage dispatchAuth={this.props.dispatchAuth}/>
-					}
-				</div>
+			<div className='header'>
+				{ 
+					isUserAuth ?
+					<ProfilePage 
+						userLogin={this.props.userLogin}
+						userPassword={this.props.userPassword}/> 
+					:
+					<AutorizationPage dispatchAuth={this.props.dispatchAuth}/>
+				}
+			</div>
 		)
 	}
 }

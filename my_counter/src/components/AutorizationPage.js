@@ -8,14 +8,10 @@ class AutorizationPage extends Component {
 	}
 
 	state = {
-		isOpened: false,
 		login: null,
 		password: null
 	}
 
-	//shouldComponentUpdate(prevProps, prevState) {
-		// return false;
-	//}
 
 	changeLocalStorage = () => {
 		let userData = 
@@ -60,7 +56,7 @@ class AutorizationPage extends Component {
 									value='Войти'
 									className='btn authBtn' />
 						<p> 
-						<span>Login</span>
+						<span className='user_data_container_login'>Login</span>
 						<input type="text"
 									placeholder='Enter your login'
 									onChange={this.changeLogin} />

@@ -1,6 +1,4 @@
-* {
-	transition: all .6s;
-}
+
 
 
 body {
@@ -23,13 +21,13 @@ body {
 	cursor: pointer;
 }
 
-   li {
-    list-style-type: none;
-   }
-   ul {
-    margin: 0;
-    padding: 0; 
-   }
+li {
+	list-style-type: none;
+}
+ul {
+	margin: 0;
+	padding: 0; 
+}
 
 .btn {
 	border: none;
@@ -43,12 +41,12 @@ body {
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 #root {
 	overflow: hidden;
-    padding: 5px 5px;
+	padding: 5px 5px;
 	width: 90%;
 	margin: 0 auto;
 	background: #7d9ee557;
@@ -61,13 +59,13 @@ body {
 ===============================*/
 
 #sidebar {
-	  margin-bottom: 10px;
-    width: 100%;
-    float: left;
-    background-color: inherit;
-    padding-top: -15px;
-    border-radius: 3px 3px 0 0;
-    display: block;
+	margin-bottom: 10px;
+	width: 100%;
+	float: left;
+	background-color: inherit;
+	padding-top: -15px;
+	border-radius: 3px 3px 0 0;
+	display: block;
 }
 
 
@@ -81,16 +79,16 @@ body {
 }
 
 .nav li {
-    float: left;
-    margin-left: 10px;
+	float: left;
+	margin-left: 10px;
 }
 
 
 .content_container ul li a, .nav li a {
-    text-decoration: none;
-    color: #fff;
-    font-family: 'RobotoLight';
-    font-size: 1.3em;
+	text-decoration: none;
+	color: #fff;
+	font-family: 'RobotoLight';
+	font-size: 1.3em;
 }
 
 .nav_link:hover {
@@ -105,9 +103,9 @@ body {
 /*Content*/
 
 .content_container {
-    width: 100%;
-    display: block;
-    padding-left: 3%;
+	width: 100%;
+	display: block;
+	padding-left: 3%;
 }
 
 
@@ -119,7 +117,7 @@ body {
 
 
 .header {
-    padding: 5px 0px;
+	padding: 5px 0px;
 	background: #03a9f4;
 	border-radius: 3px;
 	padding-bottom: 10px;
@@ -148,83 +146,84 @@ body {
 
 /* AutorizationPage */
 .autorizationPage {
-    width: 100%;
+	width: 100%;
 }
 
 
 .authBtn {
-    margin-top: 24px;
-    margin-right: 9px;
+    margin-right: 19px;
     float: right;
+    margin-top: 26px;
 }
 
 .user_data_container {
-    display: inline-block;
-    width: 270px;
-    float: right;
-    padding-left: 28px;
-    margin-top: -18px;
-    font-size: 21px;
-    font-family: 'RobotoLight';
+	display: inline-block;
+	width: 270px;
+	float: right;
+	padding-left: 28px;
+	margin-top: -36px;
+	font-size: 21px;
+	font-family: 'RobotoLight';
 }
 
-.user_data_container > p {
-    margin-bottom: 0px;
+.user_data_container p {
+	margin-bottom: 0px;
+	margin-top: 3px;
 }
 
-.user_data_container > p > span {
-	
-}
+
+
+
 
 
 /*Modal_container*/
 
 .fixed-overlay {
-    position: fixed;
-    overflow: auto;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-		background-color: rgba(92, 108, 141, 0.66);
+	position: fixed;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(92, 108, 141, 0.66);
 }
 
 .modal {
-	 	box-shadow: 0px 2px 6px #3e3d49;
-    position: absolute;
-    left: 25%;
-    right: 25%;
-    top: 10%;
-    background: #fff;
-    width: 50%;
-    border-radius: 5px;
+	box-shadow: 0px 2px 6px #3e3d49;
+	position: absolute;
+	left: 25%;
+	right: 25%;
+	top: 10%;
+	background: #fff;
+	width: 50%;
+	border-radius: 5px;
 }
 
 .modal_container {
-    background-color: #fff;
+	background-color: #fff;
 }
 
 
 
 .modal_container .exit {
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-    color: #5C6C8D;
-    font-size: 24px;
-    float: right;
-    padding: 10px 15px 10px 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	color: #5C6C8D;
+	font-size: 24px;
+	float: right;
+	padding: 10px 15px 10px 10px;
 }
 
 .modal_container h1 {
-    background: rgb(92,108,141);
-    padding: 10px;
-    margin: 56px 35px;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 27px;
-    letter-spacing: 4px;
+	background: rgb(92,108,141);
+	padding: 10px;
+	margin: 56px 35px;
+	border-radius: 4px;
+	text-align: center;
+	font-size: 27px;
+	letter-spacing: 4px;
 }
 
 .modal_container button {
@@ -240,8 +239,7 @@ body {
 
 .fixed-overlay .modal .modal_container button:hover span {
 	background: #eee;
-	color: #5c6c8d;
-	text-shadow: 1px 1px 1px #555;
+	color: #0320b9 ;
 	box-shadow: 2px 2px 4px #5c6c8d;
 }
 
@@ -259,20 +257,23 @@ body {
 }
 
 .modal_container button span {
-    background: white;
-    border-radius: 5px;
-    padding: 1% 13%;
-    font-size: 24px;
-    color: #5c6c8d;
-    text-shadow: 2px 2px 2px #aaa;
+	background: white;
+	border-radius: 5px;
+	padding: 1% 13%;
+	font-size: 24px;
+	color: #5c6c8d;
+	text-shadow: 2px 2px 2px #aaa;
 }
 
 
 .userData {
-	font-family: 'RobotoLight';
-	font-size: 20px;
-	float: right;
-	margin: 10px;
+    /* clear: both; */
+    font-family: 'RobotoLight';
+    font-size: 20px;
+    float: right;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .userData ul, li {
@@ -292,11 +293,11 @@ body {
 
 .timer {
 	
-    float: right;
+	float: right;
 }
 
 .timer_container {
-float:right;
+	float:right;
 }
 
 /* FormRegistration */
@@ -326,13 +327,13 @@ float:right;
 }
 
 #form_registration p {
-    font-size: 22px;
-    font-family: 'RobotoLight';
+	font-size: 22px;
+	font-family: 'RobotoLight';
 }
 
 #form_registration span {
-    font-size: 18px;
-    font-family: 'RobotoLight';
+	font-size: 18px;
+	font-family: 'RobotoLight';
 }
 
 #form_registration input {

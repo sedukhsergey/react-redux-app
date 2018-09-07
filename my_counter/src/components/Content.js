@@ -4,11 +4,21 @@ import {Route, Switch, Link} from 'react-router-dom'
 
 import Counter from './Counter'
 import Timer from './Timer'
-/*<Counter
-	changeCounterDispatch={this.props.changeCounterDispatch} />*/
+import Article from './Article'
+
 class Content extends Component {
 	static propTypes = {
 		changeCounterDispatch: PropTypes.func.isRequired,
+	}
+
+	state = {
+		num: 0,
+	}
+
+	handleClick = () => {
+		this.setState(() => ({
+			num: this.state.num + 1,
+		}))
 	}
 	render() {
 		return (
@@ -20,12 +30,23 @@ class Content extends Component {
 					<li>
 						<Link className='nav_link' to='/content/counter'>Counter</Link>
 					</li>
+					<li>
+						<Link className='nav_link' to='/content/article'>Article</Link>
+					</li>
 					
 				</ul>
 				<Switch>
 					<Route exact path='/content/timer' component={Timer} />
-					<Route path='/content/counter' component={Counter} />
+					<Route path='/content/counter' render={() => (
+						<Counter changeCounterDispatch={this.props.changeCounterDispatch}/>
+						)} />
+					<Route path='/content/article' render={() => (
+						<Article 
+							number={this.state.num}
+							handleClick={this.handleClick}/>
+						)} />
 				</Switch>
+				
 			</div>
 			)
 	}
