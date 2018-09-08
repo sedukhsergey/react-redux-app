@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-import UserDataBlock from '../components/UserDataBlock'
-import ModalBlock from '../components/ModalBlock'
+import UserDataBlock from './UserDataBlock/UserDataBlock'
+import ModalBlock from './ModalBlock/ModalBlock'
 
 class ProfilePage extends Component {
 

@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
-import ProfilePage from '../components/ProfilePage'
-import AutorizationPage from '../components/AutorizationPage'
+import ProfilePage from './ProfilePage/ProfilePage'
+import AutorizationPage from './AutorizationPage/AutorizationPage'
 
  class Header extends Component {
 

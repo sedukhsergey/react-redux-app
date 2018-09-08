@@ -9,6 +9,7 @@ class Article extends Component {
 
 state = {
 	text: '',
+	number: this.props.number,
 }
 
 _textChange = (ev) => {
@@ -17,6 +18,15 @@ _textChange = (ev) => {
 		text:input
 	}))
 }
+
+shouldComponentUpdate(nextProps, nextState) {
+console.log('-d',nextState) 
+return true
+}
+
+
+
+
 	render() {
 		return (
 				<div className='article'>
@@ -35,7 +45,7 @@ _textChange = (ev) => {
 							defaultValue={this.state.text}
 							onChange={this._textChange}>
 						</textarea>
-						<h3>{this.state.text.length}</h3>
+						<h3> The length of textarea is: {this.state.text.length}</h3>
 					</div>
 				</div>
 		)

@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Route, Switch, Link} from 'react-router-dom'
 
-import Counter from './Counter'
-import Timer from './Timer'
-import Article from './Article'
+import Counter from './Counter/Counter'
+import Timer from './Timer/Timer'
+import Article from './Article/Article'
 
 class Content extends Component {
 	static propTypes = {
@@ -13,14 +13,17 @@ class Content extends Component {
 
 	state = {
 		num: 0,
+		text:''
 	}
 
 	handleClick = () => {
 		this.setState(() => ({
 			num: this.state.num + 1,
+			text: this.state.text + 'text'
 		}))
 	}
 	render() {
+
 		return (
 			<div className="content_container">
 				<ul>
@@ -43,7 +46,9 @@ class Content extends Component {
 					<Route path='/content/article' render={() => (
 						<Article 
 							number={this.state.num}
-							handleClick={this.handleClick}/>
+							text={this.state.text}
+							handleClick={this.handleClick}
+							/>
 						)} />
 				</Switch>
 				

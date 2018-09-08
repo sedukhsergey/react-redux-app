@@ -5,6 +5,8 @@ body {
 	background: #5C6C8D;
 	color: white;
 	font-family: 'RobotoRegular', Arial, sans-serif;
+			min-width: 380px;
+			font-size: 16px;
 }
 
 
@@ -53,8 +55,6 @@ ul {
 	border-radius: 5px;
 	box-shadow: 0px 4px 3px #3b3d415e, -2px 0px 3px #3b3d415e, 2px 0px 3px #3b3d415e;
 }
-
-
 /******** Nav ********
 ===============================*/
 
@@ -66,16 +66,6 @@ ul {
 	padding-top: -15px;
 	border-radius: 3px 3px 0 0;
 	display: block;
-}
-
-
-
-.nav {
-
-}
-
-.nav ul{
-
 }
 
 .nav li {
@@ -99,23 +89,12 @@ ul {
 	position: relative;
 }
 
+/* Nav end */
 
-/*Content*/
-
-.content_container {
-	width: 100%;
-	display: block;
-	padding-left: 3%;
-}
-
-
-
-
-
-/******** Header ********
+/******** Main  ********
 ===============================*/
 
-
+/* Header */
 .header {
 	padding: 5px 0px;
 	background: #03a9f4;
@@ -128,19 +107,6 @@ ul {
 	content: " ";
 	display: table;
 	clear: both;
-}
-/* Counter */
-.counter {
-	float:right;
-}
-.counter h2 {
-	font-family: 'RobotoLight';
-	letter-spacing: 2px;
-}
-
-.counter h2 span{
-	font-family: 'RobotoLight';
-	letter-spacing: 2px;
 }
 
 
@@ -155,7 +121,6 @@ ul {
     float: right;
     margin-top: 26px;
 }
-
 .user_data_container {
 	display: inline-block;
 	width: 270px;
@@ -170,11 +135,7 @@ ul {
 	margin-bottom: 0px;
 	margin-top: 3px;
 }
-
-
-
-
-
+/* AutorizationPage end */
 
 /*Modal_container*/
 
@@ -265,9 +226,10 @@ ul {
 	text-shadow: 2px 2px 2px #aaa;
 }
 
+/* Modal Container end */
 
+/* User Data */
 .userData {
-    /* clear: both; */
     font-family: 'RobotoLight';
     font-size: 20px;
     float: right;
@@ -286,19 +248,44 @@ ul {
 	border-bottom: 1px dotted #fff;
 	margin-bottom: 3px;
 }
+/* User Data end */
+/* Header end*/
 
-/******** Article ********
-===============================*/
-/*Timer*/
-
-.timer {
-	
-	float: right;
+/* Whinepad */
+#winepad {
+	margin: 10px 0;
+	width: 100%;
 }
+	#exel {
+		font-family: 'RobotoCondensed-Bold';
+		display:block;
+		margin: 0 auto;
+		width: 80%;
+	}
 
-.timer_container {
-	float:right;
-}
+	#exel h2 {
+		text-align: center;
+	}
+
+	#exel table {
+		border: 1px solid #fff;
+		margin: 0 auto;
+	}
+
+	#exel table thead {
+		cursor: pointer;
+		background: #67c7a97d;
+	}
+
+	#exel td {
+		border-bottom: 1px solid #fff;
+	}
+
+
+
+/* Whinepad end */
+/* Main end*/
+
 
 /* FormRegistration */
 
@@ -340,6 +327,51 @@ ul {
 	display: block;
 	margin-bottom: 5px;
 }
+
+/******** Content ********
+===============================*/
+
+.content_container {
+	width: 100%;
+	display: block;
+	padding-left: 3%;
+}
+
+
+/* Counter */
+.counter {
+	float:right;
+}
+.counter h2 {
+	font-family: 'RobotoLight';
+	letter-spacing: 2px;
+}
+
+.counter h2 span{
+	font-family: 'RobotoLight';
+	letter-spacing: 2px;
+}
+/* Counter end */
+
+/*Timer*/
+
+.timer {
+	
+	float: right;
+}
+
+.timer_container {
+	float:right;
+}
+
+/* Timer end */
+
+/* Content end */
+
+/******** Article ********
+===============================*/
+
+
 
 
 
