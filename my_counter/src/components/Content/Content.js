@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Route, Switch, Link} from 'react-router-dom'
 
-import Counter from './Counter/Counter'
-import Timer from './Timer/Timer'
-import Article from './Article/Article'
+import Counter from './Counter'
+import Timer from './Timer'
+import Article from './Article'
 
 class Content extends Component {
 	static propTypes = {
 		changeCounterDispatch: PropTypes.func.isRequired,
+		dispatchText: PropTypes.func.isRequired
 	}
 
 	state = {
@@ -48,6 +49,7 @@ class Content extends Component {
 							number={this.state.num}
 							text={this.state.text}
 							handleClick={this.handleClick}
+							dispatchText={this.props.dispatchText}
 							/>
 						)} />
 				</Switch>

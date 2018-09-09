@@ -5,6 +5,7 @@ class Article extends Component {
 	static propTypes = {
 		number: PropTypes.number.isRequired,
 		handleClick: PropTypes.func.isRequired,
+		dispatchText: PropTypes.func.isRequired
 	}
 
 state = {
@@ -17,15 +18,8 @@ _textChange = (ev) => {
 	this.setState(() => ({
 		text:input
 	}))
+	this.props.dispatchText(this.state.text)
 }
-
-shouldComponentUpdate(nextProps, nextState) {
-console.log('-d',nextState) 
-return true
-}
-
-
-
 
 	render() {
 		return (

@@ -5,7 +5,7 @@ body {
 	background: #5C6C8D;
 	color: white;
 	font-family: 'RobotoRegular', Arial, sans-serif;
-			min-width: 380px;
+			min-width: 480px;
 			font-size: 16px;
 }
 
@@ -257,10 +257,11 @@ ul {
 	width: 100%;
 }
 	#exel {
-		font-family: 'RobotoCondensed-Bold';
 		display:block;
 		margin: 0 auto;
-		width: 80%;
+		width: 90%;
+
+
 	}
 
 	#exel h2 {
@@ -268,17 +269,31 @@ ul {
 	}
 
 	#exel table {
-		border: 1px solid #fff;
 		margin: 0 auto;
+		border-collapse: collapse;
+		border: 3px solid #fff;
 	}
 
 	#exel table thead {
+		font-family: 'RobotoCondensed-Bold';
 		cursor: pointer;
 		background: #67c7a97d;
 	}
 
-	#exel td {
-		border-bottom: 1px solid #fff;
+	#exel table tbody {
+		font-family: 'RobotoCondensed-Light';
+	}
+
+	#exel table th {
+		border: 1px solid #fff;
+	}
+
+	#exel table td {
+		border: 1px solid #fff;
+	}
+
+	#exel table th, td {
+		padding: 2%;
 	}
 
 

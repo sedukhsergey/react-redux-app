@@ -1,7 +1,8 @@
 
+const AUTH = 'AUTH'
 const auth = (data) => {
 		return {
-			type: 'AUTH',
+			type: AUTH,
 			data
 		}
 }

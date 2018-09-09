@@ -1,13 +1,9 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import Exel from './Exel/Exel'
+import Exel from './Exel'
 
-class Whinepad extends Component {
-
-	static propTypes= {
-		getKey: PropTypes.func.isRequired,
-	}
+class Bookpad extends Component {
 
 	state = {
 		headers: [
@@ -27,12 +23,11 @@ class Whinepad extends Component {
 		return (
 			<div id='winepad'>
 				<Exel
-					getKey={this.props.getKey}
-					data={this.state.data}
-					headers={this.state.headers}/>
+					data={ this.state.data }
+					headers={ this.state.headers }/>
 			</div>
 			)
 	}
 }
 
-export default Whinepad
+export default Bookpad

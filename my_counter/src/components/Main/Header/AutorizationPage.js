@@ -4,7 +4,9 @@ import PropTypes from 'prop-types'
 class AutorizationPage extends Component {
 
 	static propTypes = {
-		dispatchAuth: PropTypes.func.isRequired
+		dispatchAuth: PropTypes.func.isRequired,
+		dispatchCheckAuth:PropTypes.func.isRequired,
+		isUserAuth: PropTypes.bool.isRequired
 	}
 
 	state = {
@@ -44,7 +46,10 @@ class AutorizationPage extends Component {
 		password: this.state.password 
 		})
 		this.changeLocalStorage()
+		if(this.state.login && this.state.password)
+			this.props.dispatchCheckAuth(true)
 	}
+
 
 	render() {
 		return (
