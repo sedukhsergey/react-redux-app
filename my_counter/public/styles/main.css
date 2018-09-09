@@ -255,6 +255,7 @@ ul {
 #winepad {
 	margin: 10px 0;
 	width: 100%;
+
 }
 	#exel {
 		display:block;
@@ -272,12 +273,20 @@ ul {
 		margin: 0 auto;
 		border-collapse: collapse;
 		border: 3px solid #fff;
+		background: #ccc;
 	}
 
 	#exel table thead {
 		font-family: 'RobotoCondensed-Bold';
 		cursor: pointer;
-		background: #67c7a97d;
+		background: #777;
+	}
+	#exel table thead th {
+				transition: all .6s;
+	}
+
+	#exel table thead th:hover {
+		background: #80EBF1;
 	}
 
 	#exel table tbody {
