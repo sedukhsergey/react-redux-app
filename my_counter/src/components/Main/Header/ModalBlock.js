@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 class ModalBlock extends Component {
@@ -15,19 +15,19 @@ class ModalBlock extends Component {
 				<div className='modal'>
 					<div className='modal_container'>
 						<span className='exit'
-									onClick={ this.props.skipLogin }>
+									onClick={this.props.skipLogin}>
 									x
 						</span>
 						<h1>Are you sure?
-							<i>{ this.props.userLogin }</i>
+							<i>{this.props.userLogin}</i>
 						</h1>
 						<p>
 							<button className='accept'
-											onClick={ this.props.acceptLogin }>
+											onClick={this.props.acceptLogin}>
 								<span>Accept</span>
 							</button>
 							<button className='reject'
-											onClick={ this.props.skipLogin }>
+											onClick={this.props.skipLogin}>
 								<span>Cansel</span>
 							</button>
 						</p>

@@ -1,9 +1,8 @@
-const IS_GUEST_ENTER = 'IS_GUEST_ENTER'
-const changeAuth = (flag) => {
+import { IS_GUEST_ENTER } from '../constants/Page.js'
+
+export const changeAuth = (payload) => {
 	return {
 		type: IS_GUEST_ENTER,
-		flag
+		payload
 	}
 }
-
-export default { changeAuth }

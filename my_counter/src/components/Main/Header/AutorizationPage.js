@@ -34,19 +34,21 @@ class AutorizationPage extends Component {
 
 	changePassword =(e) => {
 		let inputValue = e.target.value
-		this.setState(() => ({
+		this.setState( () => ( {
 			password: inputValue
 		}))
 	}
 
 	handleClickSubmit = (e) => {
 		e.preventDefault();
-		this.props.dispatchAuth({
-		login: this.state.login,
-		password: this.state.password 
-		})
+		this.props.dispatchAuth(
+			{
+				login: this.state.login,
+				password: this.state.password 
+			}
+		)
 		this.changeLocalStorage()
-		if(this.state.login && this.state.password)
+		if( this.state.login && this.state.password )
 			this.props.dispatchCheckAuth(true)
 	}
 
@@ -58,13 +60,13 @@ class AutorizationPage extends Component {
 							onSubmit={this.handleClickSubmit}>
 					<div className='user_data_container'>
 						<input type="submit" 
-									value='Войти'
-									className='btn authBtn' />
+									 value='Войти'
+									 className='btn authBtn' />
 						<p> 
 						<span className='user_data_container_login'>Login</span>
 						<input type="text"
-									placeholder='Enter your login'
-									onChange={this.changeLogin} />
+									 placeholder='Enter your login'
+									 onChange={this.changeLogin} />
 						</p>
 						<p> 
 							<span>Password</span> 

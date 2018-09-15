@@ -1,11 +1,11 @@
 
 const userReducer = (usersState = {}, action) => {
-  switch (action.type) {
-      case "AUTH":
-        return usersState =  {...action.data}
-      default:
-        return usersState
-	}; 
+	switch (action.type) {
+		case "AUTH":
+			return {...action.payload}
+		default:
+			return usersState
+	}
 }
 
 export default userReducer;

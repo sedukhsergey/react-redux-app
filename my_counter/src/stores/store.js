@@ -1,13 +1,13 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk';
-
-// import { composeWidthDevTools } from 'redux-devtools-extension'
-
 import counterReducer from '../reducers/counterReducer'
 import checkUserAuthReducer from '../reducers/checkUserAuthReducer'
 import userReducer from '../reducers/userReducer'
 import textReducer from '../reducers/textReducer'
 import changeAuthGuestReducer from '../reducers/changeAuthGuestReducer'
+import getUserPhotosReducer from '../reducers/getUserPhotosReducer'
+import {createLogger} from 'redux-logger'
+import thunk from 'redux-thunk'
+
 
 const store = createStore(
 	combineReducers(
@@ -16,10 +16,11 @@ const store = createStore(
 			user: userReducer,
 			text: textReducer,
 			isUserAuth: checkUserAuthReducer,
-			isGuestAuth: changeAuthGuestReducer
+			isGuestAuth: changeAuthGuestReducer,
+			usersPhotos: getUserPhotosReducer,
 		}
 	),
-	applyMiddleware(thunk)
+	applyMiddleware( thunk, createLogger()  )
 );
 
 store.subscribe(() =>

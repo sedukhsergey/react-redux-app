@@ -12,17 +12,7 @@ class Content extends Component {
 		dispatchText: PropTypes.func.isRequired
 	}
 
-	state = {
-		num: 0,
-		text:''
-	}
 
-	handleClick = () => {
-		this.setState(() => ({
-			num: this.state.num + 1,
-			text: this.state.text + 'text'
-		}))
-	}
 	render() {
 
 		return (
@@ -46,9 +36,6 @@ class Content extends Component {
 						)} />
 					<Route path='/content/article' render={() => (
 						<Article 
-							number={this.state.num}
-							text={this.state.text}
-							handleClick={this.handleClick}
 							dispatchText={this.props.dispatchText}
 							/>
 						)} />

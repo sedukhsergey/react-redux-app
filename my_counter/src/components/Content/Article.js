@@ -3,14 +3,12 @@ import PropTypes from 'prop-types'
 
 class Article extends Component {
 	static propTypes = {
-		number: PropTypes.number.isRequired,
-		handleClick: PropTypes.func.isRequired,
 		dispatchText: PropTypes.func.isRequired
 	}
 
 state = {
 	text: '',
-	number: this.props.number,
+	number: 0,
 }
 
 _textChange = (ev) => {
@@ -20,6 +18,13 @@ _textChange = (ev) => {
 	}))
 	this.props.dispatchText(this.state.text)
 }
+
+	handleClick = () => {
+		this.setState(() => ({
+			number: this.state.number + 1,
+		}))
+	}
+
 
 	render() {
 		return (
@@ -31,8 +36,8 @@ _textChange = (ev) => {
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet harum minima perspiciatis adipisci porro atque, eligendi nihil repellendus aliquid. Voluptas aut earum eaque accusantium tempora deleniti eius, nostrum velit similique.
 					</p>
 					<p>
-					<button className='btn' onClick={this.props.handleClick}>Click</button>
-						<span>{this.props.number}</span>
+					<button className='btn' onClick={this.handleClick}>Click</button>
+						<span>{this.state.number}</span>
 					</p>
 					<div>
 						<textarea 

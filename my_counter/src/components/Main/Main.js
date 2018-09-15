@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 import Header from './Header/Header'
-import Bookspad from './Bookspad/Bookspad'
+import UsersPad from './UsersPad/UsersPad'
+import GetUserPhotos from './GetUserPhotos/GetUserPhotos'
 
 class Main extends Component {
 
@@ -13,22 +14,29 @@ class Main extends Component {
 		isUserAuth: PropTypes.bool.isRequired,
 		dispatchCheckAuth:PropTypes.func.isRequired,
 		isGuestAuth: PropTypes.bool.isRequired,
-		dispatchChangeAuthGuest: PropTypes.func.isRequired
+		dispatchChangeAuthGuest: PropTypes.func.isRequired,
+		dispatchPhotos: PropTypes.func.isRequired,
+		photoList: PropTypes.array.isRequired,
+		isFetching: PropTypes.bool.isRequired
 	}
 
 	render() {
 		return (
 			<div id='main'>
 				<Header 
-					isUserAuth={ this.props.isUserAuth }
-					dispatchCheckAuth={ this.props.dispatchCheckAuth }
-					userLogin={ this.props.userLogin }
-					userPassword={ this.props.userPassword }
-					dispatchAuth={ this.props.dispatchAuth }
-					isGuestAuth={ this.props.isGuestAuth }
-					dispatchChangeAuthGuest={ this.props.dispatchChangeAuthGuest }
+					isUserAuth={this.props.isUserAuth}
+					dispatchCheckAuth={this.props.dispatchCheckAuth}
+					userLogin={this.props.userLogin}
+					userPassword={this.props.userPassword}
+					dispatchAuth={this.props.dispatchAuth}
+					isGuestAuth={this.props.isGuestAuth}
+					dispatchChangeAuthGuest={this.props.dispatchChangeAuthGuest}
 					 />
-				<Bookspad />
+				<UsersPad />
+				<GetUserPhotos
+					dispatchPhotos={this.props.dispatchPhotos}
+					photoList={this.props.photoList}
+					isFetching={this.props.isFetching} />
 			</div>
 		)
 	}

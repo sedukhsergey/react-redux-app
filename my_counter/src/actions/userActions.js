@@ -1,12 +1,8 @@
+import {AUTH} from '../constants/Page'
 
-const AUTH = 'AUTH'
-const auth = (data) => {
+export const auth = (payload) => {
 		return {
 			type: AUTH,
-			data
+			payload
 		}
 }
-
-export default {
-	auth
- };

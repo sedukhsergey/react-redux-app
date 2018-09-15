@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 class UserDataBlock extends Component {
@@ -11,7 +11,7 @@ class UserDataBlock extends Component {
 		return (
 			<div className='userData'>
 				<ul>
-					<li><span>login: { this.props.userLogin }</span></li>
+					<li><span>login: {this.props.userLogin}</span></li>
 				</ul>
 			</div>
 		);

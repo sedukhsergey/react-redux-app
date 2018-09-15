@@ -1,9 +1,8 @@
-const IS_USER_LOGIN = 'IS_USER_LOGIN'
-const checkAuth = (flag) => {
+import { IS_USER_LOGIN } from '../constants/Page'
+
+export const checkAuth = (payload) => {
 	return {
-		type: 'IS_USER_LOGIN',
-		flag
+		type: IS_USER_LOGIN,
+		payload
 	}
 }
-
-export default { checkAuth }

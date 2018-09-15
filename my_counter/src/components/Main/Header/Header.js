@@ -1,4 +1,4 @@
-import React, {  Component  } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 import ProfilePage from './ProfilePage'
@@ -20,23 +20,23 @@ import AutorizationPage from './AutorizationPage'
 		return this.props.isUserAuth
 			?
 			<ProfilePage 
-				dispatchCheckAuth={ this.props.dispatchCheckAuth }
-				isUserAuth={ this.props.isUserAuth }
-				userLogin={ this.props.userLogin }
-				userPassword={ this.props.userPassword }
-				isGuestAuth={ this.props.isGuestAuth }
-				dispatchChangeAuthGuest={ this.props.dispatchChangeAuthGuest } />
+				dispatchCheckAuth={this.props.dispatchCheckAuth}
+				isUserAuth={this.props.isUserAuth}
+				userLogin={this.props.userLogin}
+				userPassword={this.props.userPassword}
+				isGuestAuth={this.props.isGuestAuth}
+				dispatchChangeAuthGuest={this.props.dispatchChangeAuthGuest} />
 			:
 			<AutorizationPage 
-				dispatchAuth={ this.props.dispatchAuth }
-				dispatchCheckAuth={ this.props.dispatchCheckAuth }
-				isUserAuth={ this.props.isUserAuth } />
+				dispatchAuth={this.props.dispatchAuth}
+				dispatchCheckAuth={this.props.dispatchCheckAuth}
+				isUserAuth={this.props.isUserAuth} />
 	}
 
 	render() {
 		return (
 			<div className='header'>
-				{ this.renderUserDataPage() }
+				{this.renderUserDataPage()}
 			</div>
 		)
 	}

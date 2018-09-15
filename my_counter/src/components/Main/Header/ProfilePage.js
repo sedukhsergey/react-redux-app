@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 import UserDataBlock from './UserDataBlock'
@@ -29,17 +29,17 @@ class ProfilePage extends Component {
 		return this.props.isUserAuth && this.props.isGuestAuth 
 			?
 			<ModalBlock 
-				acceptLogin={ this.acceptLogin }
-				skipLogin={ this.skipLogin }
-				userLogin={ this.props.userLogin } />
+				acceptLogin={this.acceptLogin}
+				skipLogin={this.skipLogin}
+				userLogin={this.props.userLogin} />
 			:
-			<UserDataBlock userLogin={ this.props.userLogin } />
+			<UserDataBlock userLogin={this.props.userLogin} />
 	}
 
 	render() {
 		return (
 			<div className='profile_page'>
-				{ this.renderModalBlock() }
+				{this.renderModalBlock()}
 			</div>
 		);
 	}

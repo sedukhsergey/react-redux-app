@@ -5,8 +5,8 @@ body {
 	background: #5C6C8D;
 	color: white;
 	font-family: 'RobotoRegular', Arial, sans-serif;
-			min-width: 480px;
-			font-size: 16px;
+	min-width: 680px;
+	font-size: 16px;
 }
 
 
@@ -117,9 +117,9 @@ ul {
 
 
 .authBtn {
-    margin-right: 19px;
-    float: right;
-    margin-top: 26px;
+	margin-right: 19px;
+	float: right;
+	margin-top: 26px;
 }
 .user_data_container {
 	display: inline-block;
@@ -230,12 +230,12 @@ ul {
 
 /* User Data */
 .userData {
-    font-family: 'RobotoLight';
-    font-size: 20px;
-    float: right;
-    margin-top: 0px;
-    margin-right: 10px;
-    margin-left: 10px;
+	font-family: 'RobotoLight';
+	font-size: 20px;
+	float: right;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .userData ul, li {
@@ -257,57 +257,85 @@ ul {
 	width: 100%;
 
 }
-	#exel {
-		display:block;
-		margin: 0 auto;
-		width: 90%;
+#exel {
+	display:block;
+	margin: 0 auto;
+	width: 90%;
 
 
-	}
+}
 
-	#exel h2 {
-		text-align: center;
-	}
+#exel h2 {
+	text-align: center;
+}
 
-	#exel table {
-		margin: 0 auto;
-		border-collapse: collapse;
-		border: 3px solid #fff;
-		background: #ccc;
-	}
+#exel table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: 3px solid #fff;
+	background: #ccc;
+}
 
-	#exel table thead {
-		font-family: 'RobotoCondensed-Bold';
-		cursor: pointer;
-		background: #777;
-	}
-	#exel table thead th {
-				transition: all .6s;
-	}
+#exel table thead {
+	font-family: 'RobotoCondensed-Bold';
+	cursor: pointer;
+	background: #777;
+}
+#exel table thead th {
+	transition: all .6s;
+}
 
-	#exel table thead th:hover {
-		background: #80EBF1;
-	}
+#exel table thead th:hover {
+	background: #80EBF1;
+}
 
-	#exel table tbody {
-		font-family: 'RobotoCondensed-Light';
-	}
+#exel table tbody {
+	font-family: 'RobotoCondensed-Light';
+}
 
-	#exel table th {
-		border: 1px solid #fff;
-	}
+#exel table th {
+	border: 1px solid #fff;
+}
 
-	#exel table td {
-		border: 1px solid #fff;
-	}
+#exel table td {
+	border: 1px solid #fff;
+}
 
-	#exel table th, td {
-		padding: 2%;
-	}
+#exel table th, td {
+}
 
 
 
 /* Whinepad end */
+/* GetUserPhotos */
+
+#getUserPhotos {
+	border: 1px dotted #fff;
+	margin: 5px;
+	padding: 10px;
+	overflow: hidden;
+}
+
+#getUserPhotos .gallery {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#getUserPhotos .gallery img {
+	margin: 5px;
+	float: left;
+	box-shadow: 0px 3px 6px #333;
+}
+
+#getUserPhotos .btn {
+	display: block;
+	margin: 10px auto;
+	padding: 10px 50px;
+}
+
+/* GetUserPhotos end */
+
 /* Main end*/
 
 

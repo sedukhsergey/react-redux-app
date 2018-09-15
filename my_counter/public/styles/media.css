@@ -92,7 +92,9 @@
     position: absolute;
     top: 55px;
 }
-
+	#exel table th, td {
+		padding: 2%;
+	}
 }
 
 /* Small Devices, Tablets */
