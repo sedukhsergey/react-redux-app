@@ -9,7 +9,7 @@ class Nav extends Component{
 				<nav className='nav'>
 					<ul>
 						<li className='nav__home'>
-							<Link className='nav_link' to={process.env.PUBLIC_URL}>Home</Link>
+							<Link className='nav_link' to='/'>Home</Link>
 						</li>
 						<li className='nav__registration'>
 							<Link className='nav_link' to='/registration'>Registration</Link>
