@@ -1,6 +1,6 @@
 {
   "private": true,
-  "homepage": "https://umbrella121.github.io/ReactJS_Redux",
+  "homepage": "https://umbrella121.github.io/react-redux-app",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
