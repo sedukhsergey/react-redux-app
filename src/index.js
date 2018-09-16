@@ -7,7 +7,7 @@ import App from './containers/App'
 
 render(
   <Provider store={store}>
-    <HashRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
 			<Route component={App} />
 		</HashRouter>
 	</Provider>, 
