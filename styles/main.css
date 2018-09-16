@@ -5,7 +5,7 @@ body {
 	background: #5C6C8D;
 	color: white;
 	font-family: 'RobotoRegular', Arial, sans-serif;
-	min-width: 680px;
+	min-width: 750px;
 	font-size: 16px;
 }
 
@@ -262,7 +262,6 @@ ul {
 	margin: 0 auto;
 	width: 90%;
 
-
 }
 
 #exel h2 {
@@ -274,6 +273,7 @@ ul {
 	border-collapse: collapse;
 	border: 3px solid #fff;
 	background: #ccc;
+	width: 100%;
 }
 
 #exel table thead {
@@ -293,6 +293,10 @@ ul {
 	font-family: 'RobotoCondensed-Light';
 }
 
+#exel table th, td {
+	padding: 2%;
+}
+
 #exel table th {
 	border: 1px solid #fff;
 }
@@ -301,8 +305,6 @@ ul {
 	border: 1px solid #fff;
 }
 
-#exel table th, td {
-}
 
 
 
